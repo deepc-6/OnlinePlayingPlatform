@@ -1,0 +1,47 @@
+<!-- The wrapper div for the chart view -->
+<div class="chartBody">
+
+    <!-- The header div for the chart view -->
+    <div class="chartHeader">
+        <h3>Bar Chart</h3>
+        <h4 class="italic">Click on a bar to view the score</h4>
+    </div>
+
+    <!-- The body div for the chart view -->
+    <div class="chartDiv">
+
+        <!-- The list of players -->
+        <div class="playerlist">
+            <div
+                    class="player"
+                    ng-repeat="player in players  track by $index"
+                    ng-class="{'selected__doc' : currentPlayer == player}"
+                    ng-click="setCurrentPlayer(player)"
+            >
+                <p id="playerName">{{player.name}}</p>
+            </div>
+        </div>
+
+        <!-- The y-axis for the chart -->
+        <div class="yAxis">
+            <p>Points</p>
+        </div>
+
+        <!-- The bar chart for the chart view -->
+        <ul class="chart">
+            <li
+                    ng-repeat="bar in data"
+                    class="bar"
+                    style="height:{{bar.points / max * height}}px;left:{{($index+0.1) * 40}}px;"
+                    ng-click="showDetails(bar.id)"
+            >
+            </li>
+        </ul>
+    </div>
+
+    <!-- The x-axis for the chart -->
+    <div class="xAxis">
+        <p>Dates</p>
+    </div>
+
+</div>

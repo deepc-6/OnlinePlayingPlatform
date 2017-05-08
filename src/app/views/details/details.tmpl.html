@@ -1,0 +1,28 @@
+<!-- The wrapper div for the details view -->
+<div class="detailsDiv">
+
+    <!-- The header div for the details view -->
+    <div class="detailsHeader">
+        <h3>Score Details</h3>
+    </div>
+
+    <!-- The body div for the details view -->
+    <div class="detailsBody">
+        <div class="detailsBodyLeftCol">
+            <p>Player Name</p>
+            <p>Points</p>
+            <p>Date</p>
+        </div>
+        <div class="detailsBodyRightCol">
+            <p>{{currentPlayer.name}}</p>
+            <p>{{currentPlayer.points}}</p>
+            <p>{{currentPlayer.date | date: 'dd MMM yyyy'}}</p>
+        </div>
+    </div>
+
+    <!-- The footer div for the details view with the button to redirect to the chart view -->
+    <div class="detailsFooter">
+        <button id="chartViewButton" ng-click="chartView()">Graph View</button>
+    </div>
+
+</div>
